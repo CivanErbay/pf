@@ -1,6 +1,6 @@
 <template>
   <div class="svg-container">
-    <svg width="404" height="897" viewBox="0 0 200 300" fill="none">
+    <svg width="404" height="1300" viewBox="0 0 200 300" fill="none">
       <path
         ref="path"
         id="svgPath"
@@ -10,13 +10,22 @@
         stroke-dashoffset="0"
       />
     </svg>
-    <img alt="civan erbay" class="me" src="../assets/pixel_me.png" />
+    <img
+      alt="civan erbay"
+      class="me"
+      :class="{ 'visible-me': visibleMe }"
+      src="../assets/pixel_me.png"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  data() {},
+  data() {
+    return {
+      visibleMe: false,
+    };
+  },
   methods: {
     fillingSVGPaths() {
       let scrollPercentage =
@@ -37,6 +46,10 @@ export default {
       console.log(drawLength);
       console.log(pathLength);
       path.style.strokeDashoffset = pathLength - drawLength;
+
+      scrollPercentage > 0.6
+        ? (this.visibleMe = true)
+        : (this.visibleMe = false);
     },
   },
   mounted() {
@@ -59,7 +72,16 @@ export default {
 }
 
 .me {
-    position: absolute;
-    height: 500px;
+  position: absolute;
+  height: 520px;
+  opacity: 0;
+  margin-bottom: 133px;
+  margin-right: 92px;
+  transition: all 0.5s ease-in-out;
+}
+
+.visible-me {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 </style>
