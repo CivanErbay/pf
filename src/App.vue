@@ -1,5 +1,6 @@
 <script setup>
 import SvgScroll from "./components/SvgScroll.vue";
+import Landing from "./components/Landing.vue";
 </script>
 
 <template>
@@ -7,6 +8,8 @@ import SvgScroll from "./components/SvgScroll.vue";
 
   <main>
     <!-- <img alt="Vue logo" class="logo" src="./assets/cvline.svg" /> -->
+
+    <Landing></Landing>
     <SvgScroll></SvgScroll>
   </main>
 </template>
