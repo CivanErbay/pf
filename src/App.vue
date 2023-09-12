@@ -1,6 +1,7 @@
 <script setup>
 import SvgScroll from "./components/SvgScroll.vue";
 import Landing from "./components/Landing.vue";
+import Journey from "./components/Journey.vue";
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import Landing from "./components/Landing.vue";
 
     <Landing></Landing>
     <SvgScroll></SvgScroll>
+    <Journey></Journey>
   </main>
 </template>
 

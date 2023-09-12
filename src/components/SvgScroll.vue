@@ -1,35 +1,44 @@
 <template>
   <div class="svg-container">
-    <svg width="800" height="2000" viewBox="0 0 150 1920" fill="none">
-           <!--  <svg width="1900" height="1000" viewBox="0 0 150 1920" fill="none">  -->
-          <!--   mobile -->
+    <svg
+      class="h-[900px] md:h-[1855px] md:w-[733] mr-3"
+      viewBox="0 0 733 1355"
+      fill="none"
+    >
+      <!--  <svg width="1900" height="1000" viewBox="0 0 150 1920" fill="none">  -->
+      <!--   mobile -->
 
       <path
         ref="path"
         id="svgPath"
-        d="M240 0V143H8V411H392V723H8V917H289V1067H56V1155H179"
+        d="M573 8V151H7.5V419H725V731H153V925H622V1075H261.5V1247H489"
         stroke-width="15"
         stroke="rgb(44, 62, 80)"
         stroke-dasharray="0"
         stroke-dashoffset="0"
       />
     </svg>
- <!--    <img
+    <!--    <img
       alt="civan erbay"
       class="me"
       :class="{ 'visible-me': visibleMe }"
       src="../assets/pixel_me.png"
     /> -->
+
+
   </div>
 </template>
 
 <script>
+import Journey from "./Journey.vue";
+
 export default {
   data() {
     return {
       visibleMe: false,
     };
   },
+  components: { Journey },
   methods: {
     fillingSVGPaths() {
       let scrollPercentage =
@@ -71,7 +80,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute
 }
 
 .me {
