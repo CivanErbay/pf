@@ -6,14 +6,14 @@ import Skills from "./components/Skills.vue";
 </script>
 
 <template>
-
   <main>
     <!-- <img alt="Vue logo" class="logo" src="./assets/cvline.svg" /> -->
 
     <Landing></Landing>
     <!-- <SvgScroll></SvgScroll> -->
-    <!-- <Journey></Journey> -->
+
     <Skills></Skills>
+    <Journey></Journey>
   </main>
 </template>
 

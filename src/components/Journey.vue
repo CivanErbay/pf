@@ -1,5 +1,6 @@
 <template>
-  <div class="relative z-10 flex flex-col">
+  <section class="relative z-10 flex flex-col items-center">
+    <h3 class="font-rubik text-3xl md:text-7xl mb-9">My Experience</h3>
     <div
       class="w-20 h-14 bg-[#2c3e50] text-white cursor-pointer font-rubik flex items-center justify-center mb-8"
     >
@@ -64,7 +65,7 @@
       </p>
       <p class="mt-3 italic">at kappes-kimchi</p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
