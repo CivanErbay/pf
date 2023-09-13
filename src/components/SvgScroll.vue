@@ -1,13 +1,10 @@
 <template>
   <div class="svg-container">
-    <svg
+    <!--    <svg
       class="h-[900px] md:h-[1855px] md:w-[733] mr-3"
-      viewBox="0 0 733 1355"
+      viewBox="0 0 733 1255"
       fill="none"
     >
-      <!--  <svg width="1900" height="1000" viewBox="0 0 150 1920" fill="none">  -->
-      <!--   mobile -->
-
       <path
         ref="path"
         id="svgPath"
@@ -17,15 +14,24 @@
         stroke-dasharray="0"
         stroke-dashoffset="0"
       />
-    </svg>
+    </svg> -->
     <!--    <img
       alt="civan erbay"
       class="me"
       :class="{ 'visible-me': visibleMe }"
       src="../assets/pixel_me.png"
     /> -->
-
-
+    <svg width="338" height="2008" viewBox="0 0 398 2008">
+      <path
+        d="M8 0V844H360.5V2008"
+        fill="none"
+        id="svgPath"
+        stroke-width="15"
+        stroke="rgb(44, 62, 80)"
+        stroke-dasharray="0"
+        stroke-dashoffset="0"
+      />
+    </svg>
   </div>
 </template>
 
@@ -56,8 +62,6 @@ export default {
       path.style.strokeDashoffset = pathLength;
 
       let drawLength = pathLength * scrollPercentage;
-      console.log(drawLength);
-      console.log(pathLength);
       path.style.strokeDashoffset = pathLength - drawLength;
 
       scrollPercentage > 0.6
@@ -80,7 +84,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute
+  position: absolute;
+  margin-top: -150px;
 }
 
 .me {

@@ -2,28 +2,24 @@
 import SvgScroll from "./components/SvgScroll.vue";
 import Landing from "./components/Landing.vue";
 import Journey from "./components/Journey.vue";
+import Skills from "./components/Skills.vue";
 </script>
 
 <template>
-  <!--   <header></header> -->
 
   <main>
     <!-- <img alt="Vue logo" class="logo" src="./assets/cvline.svg" /> -->
 
     <Landing></Landing>
-    <SvgScroll></SvgScroll>
-    <Journey></Journey>
+    <!-- <SvgScroll></SvgScroll> -->
+    <!-- <Journey></Journey> -->
+    <Skills></Skills>
   </main>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 @media (min-width: 1024px) {
