@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center">
+  <section class="flex flex-col">
     <h3 class="font-rubik text-3xl md:text-7xl mb-9">My Expertise</h3>
 
     <div class="flex flex-wrap md:gap-10">

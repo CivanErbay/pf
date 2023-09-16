@@ -1,12 +1,12 @@
 <template>
-  <section class="relative z-10 flex flex-col items-center">
+  <section class="relative z-10 flex flex-col-reverse items-center">
     <h3 class="font-rubik text-3xl md:text-7xl mb-9">My Experience</h3>
     <div
       class="w-20 h-14 bg-[#2c3e50] text-white cursor-pointer font-rubik flex items-center justify-center mb-8"
     >
       2021
     </div>
-    <div class="bg-white p-5 text-sm border-[5px] border-[#2c3e50]">
+    <div class="bg-white p-5 text-sm border-[5px] border-[#2c3e50] w-80">
       <h3 class="font-bold mb-3">deka.de</h3>
       <p>
         Implementation of the deka.de website for the credit institution Deka

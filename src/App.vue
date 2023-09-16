@@ -2,6 +2,7 @@
 import SvgScroll from "./components/SvgScroll.vue";
 import Landing from "./components/Landing.vue";
 import Journey from "./components/Journey.vue";
+import Projects from "./components/Projects.vue";
 import Skills from "./components/Skills.vue";
 </script>
 
@@ -13,7 +14,8 @@ import Skills from "./components/Skills.vue";
     <!-- <SvgScroll></SvgScroll> -->
 
     <Skills></Skills>
-    <Journey></Journey>
+    <Projects></Projects>
+    <!-- <Journey></Journey> -->
   </main>
 </template>
 
@@ -23,20 +25,8 @@ header {
 }
 
 @media (min-width: 1024px) {
-  /*   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  } */
-
   .logo {
     height: 200vh;
   }
-
-  /*   header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  } */
 }
 </style>

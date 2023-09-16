@@ -1,6 +1,6 @@
 <template>
-  <section class="flex flex-col justify-center relative">
-    <div>
+  <section class="flex flex-col md:justify-center relative">
+    <div class="mt-32 md:mt-0">
       <h1 class="font-rubik text-5xl md:text-9xl">
         Crafting Digital Landscapes.
       </h1>
@@ -15,17 +15,18 @@
         src="../assets/code-screen.png"
         alt=""
       /> -->
-      <img
+      <!--    <img
         class="h-[250px] w-[400px] opacity-10 absolute right-10 top-[50%]"
         src="../assets/codevec.svg"
         alt=""
-      />
+      /> -->
+      <SvgCode class="opacity-10 absolute md:right-12 top-[50%] md:top-[45%]"></SvgCode>
     </div>
   </section>
 </template>
 
-<script>
-export default {};
+<script setup>
+import SvgCode from "./SvgCode.vue";
 </script>
 
 <style scoped></style>
