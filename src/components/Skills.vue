@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col">
-    <h3 class="font-rubik text-3xl md:text-7xl mb-9">My Expertise</h3>
+    <h3 class="font-rubik text-4xl md:text-7xl mb-9">My Expertise</h3>
 
     <div class="flex flex-wrap md:gap-10">
       <div class="max-w-md">

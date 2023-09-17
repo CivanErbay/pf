@@ -79,7 +79,8 @@ p {
 }
 
 section {
-  min-height: 100dvh;
+  min-height: 90dvh;
+  margin-top: 50px;
 }
 
 a,

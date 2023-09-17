@@ -1,20 +1,20 @@
 <script setup>
-import SvgScroll from "./components/SvgScroll.vue";
+/* import SvgScroll from "./components/SvgScroll.vue";
 import Landing from "./components/Landing.vue";
 import Journey from "./components/Journey.vue";
 import Projects from "./components/Projects.vue";
-import Skills from "./components/Skills.vue";
+import Skills from "./components/Skills.vue"; */
 </script>
 
 <template>
   <main>
     <!-- <img alt="Vue logo" class="logo" src="./assets/cvline.svg" /> -->
 
-    <Landing></Landing>
+    <!-- <Landing></Landing> -->
     <!-- <SvgScroll></SvgScroll> -->
-
-    <Skills></Skills>
-    <Projects></Projects>
+    <router-view></router-view>
+    <!--  <Skills></Skills>
+    <Projects></Projects> -->
     <!-- <Journey></Journey> -->
   </main>
 </template>
