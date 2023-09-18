@@ -12,9 +12,9 @@ const router = createRouter({
       path: "/project/:projectId",
       name: "Project",
       component: Project,
-      props: true, // This enables passing route params as props to the component
     },
   ],
 });
+
 
 export default router;

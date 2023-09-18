@@ -1,24 +1,45 @@
 <template>
-  <div class="p-4">
+  <div class="p-4 flex">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div v-for="(image, index) in currProject.images" :key="index">
         <img
           :src="image.src"
           :alt="image.alt"
-          class="w-full h-auto rounded-lg"
+          class="w-40 h-40 object-cover rounded-lg cursor-pointer"
+          @click="openImage(image)"
         />
       </div>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4 ml-8">
       <h2 class="text-2xl font-semibold">{{ currProject.name }}</h2>
       <p class="text-gray-600 mt-2">{{ currProject.description }}</p>
+    </div>
+  </div>
+
+  <div
+    v-if="isImageModalOpen"
+    class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 z-50 overflow-scroll cursor-pointer"
+    @click="closeImage"
+  >
+    <div class="relative max-w-4xl max-h-4xl">
+      <!-- <button
+        class="absolute top-4 right-4 text-white text-xl"
+        @click="closeImage"
+      >
+        &times;
+      </button> -->
+      <img
+        :src="selectedImage.src"
+        :alt="selectedImage.alt"
+        class="max-w-full max-h-full mx-auto"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import kappesKimchiImageFirst from "@/assets/project-img/kappes/kappes-5.png";
 import kappesKimchiImageSecond from "@/assets/project-img/kappes/kappes-1.png";
@@ -211,4 +232,17 @@ const projects = [
 const currProject = computed(() => {
   return projects.find((project) => project.path === projectId.value) || null;
 });
+
+const isImageModalOpen = ref(false);
+const selectedImage = ref(null);
+
+function openImage(image) {
+  selectedImage.value = image;
+  isImageModalOpen.value = true;
+}
+
+function closeImage() {
+  selectedImage.value = null;
+  isImageModalOpen.value = false;
+}
 </script>

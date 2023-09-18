@@ -1,6 +1,7 @@
 <template>
   <div>
     <Landing></Landing>
+    <!-- <SvgScroll></SvgScroll> -->
     <Skills></Skills>
     <Projects></Projects>
   </div>
