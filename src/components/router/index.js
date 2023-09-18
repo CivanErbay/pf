@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Project from "./../Project.vue";
+import MailSuccess from "./../MailSuccess.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -13,8 +14,12 @@ const router = createRouter({
       name: "Project",
       component: Project,
     },
+    {
+      path: "/mailsuccess",
+      name: "Successful mail",
+      component: MailSuccess,
+    },
   ],
 });
-
 
 export default router;

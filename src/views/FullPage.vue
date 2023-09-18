@@ -4,6 +4,7 @@
     <!-- <SvgScroll></SvgScroll> -->
     <Skills></Skills>
     <Projects></Projects>
+    <Contact></Contact>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Landing from "./../components/Landing.vue";
 import Journey from "../components/Journey.vue";
 import Projects from "./../components/Projects.vue";
 import Skills from "./../components/Skills.vue";
+import Contact from "./../components/Contact.vue";
 </script>
 
 <style scoped></style>

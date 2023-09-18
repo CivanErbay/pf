@@ -1,27 +1,9 @@
-<script setup>
-/* import SvgScroll from "./components/SvgScroll.vue";
-import Landing from "./components/Landing.vue";
-import Journey from "./components/Journey.vue";
-import Projects from "./components/Projects.vue";
-import Skills from "./components/Skills.vue"; */
-</script>
+<script setup></script>
 
 <template>
   <main>
-    <!-- <img alt="Vue logo" class="logo" src="./assets/cvline.svg" /> -->
-
-    <!-- <Landing></Landing> -->
-
-    <!--     <router-view v-slot="{ Component, route }">
-      <Transition name="fade" mode="out-in">
-        <div :key="route.name">
-          <component :is="Component"></component>
-        </div>
-      </Transition>
-      ></router-view
-    > -->
     <router-view v-slot="{ Component }">
-      <Transition name="page-slide" mode="in">
+      <Transition name="page-slide">
         <component :is="Component"></component>
       </Transition>
     </router-view>
@@ -40,7 +22,7 @@ header {
 
 .page-slide-enter-from,
 .page-slide-leave-to {
-  transform: translateY(60px);
+  transform: translateX(60px);
   opacity: 0;
 }
 

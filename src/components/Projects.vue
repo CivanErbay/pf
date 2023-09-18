@@ -18,6 +18,7 @@
         <a
           :href="project.link"
           target="_blank"
+          :alt="`${project.name} website link`"
           class="absolute bg-white text-base font-bold bottom-10 left-0 px-4 py-2 z-10 group-hover:bg-white group/link"
         >
           {{ project.name }}
@@ -36,9 +37,6 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-const router = useRouter();
-
 const projects = [
   {
     name: "kappes-kimchi.de",
@@ -73,7 +71,7 @@ const projects = [
     path: "mundzumund-festival",
     link: "https://mundzumund.org/",
     imgPath: "src/assets/project-img/mzm/mzm-1.png",
-    year: "2021",
+    year: "2021-2022",
   },
   {
     name: "deka.de",
@@ -84,9 +82,3 @@ const projects = [
   },
 ];
 </script>
-
-<style lang="scss" scoped></style>
-<!-- 
-@click=" () => { router.addRoute({ path: `/project/${project.path}`, component:
-Project, }); router.push(`/project/${project.path}`); } "
- -->

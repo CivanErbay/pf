@@ -1,6 +1,6 @@
 <template>
-  <div class="p-4 flex">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="p-4 flex flex-col md:flex-row">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-auto">
       <div v-for="(image, index) in currProject.images" :key="index">
         <img
           :src="image.src"
@@ -11,9 +11,46 @@
       </div>
     </div>
 
-    <div class="mt-4 ml-8">
-      <h2 class="text-2xl font-semibold">{{ currProject.name }}</h2>
+    <div class="mt-8 md:mt-0 md:ml-8 md:w-1/3 flex flex-col justify-between">
+      <h2 class="text-2xl font-semibold font-rubik">{{ currProject.name }}</h2>
       <p class="text-gray-600 mt-2">{{ currProject.description }}</p>
+
+      <div class="flex flex-col md:flex-row gap-8 my-9">
+        <div class="text-gray-600 pt-2 border-t">
+          <p class="font-bold font-rubik">technology</p>
+          <p class="mt-2">
+            {{ currProject.technology }}
+          </p>
+        </div>
+        <div class="text-gray-600 pt-2 border-t">
+          <p class="font-bold font-rubik">client</p>
+          <p class="mt-2">
+            {{ currProject.employer }}
+          </p>
+        </div>
+        <div class="text-gray-600 pt-2 border-t">
+          <p class="font-bold font-rubik">year</p>
+          <p class="mt-2">
+            {{ currProject.year }}
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <a
+          target="_blank"
+          :href="currProject.link"
+          :alt="`${currProject.name} website link`"
+          class="relative text-base font-bold py-2 group-hover:bg-white group/link"
+        >
+          visit website
+          <div
+            class="absolute bg-blue-100 h-0 bottom-1 group-hover/link:h-7 -z-10 transition-all w-full duration-300"
+          ></div>
+        </a>
+        <router-link to="/" class="hover:mr-3">
+          <img alt="back button" class="h-[40px]" src="../assets/back.svg"
+        /></router-link>
+      </div>
     </div>
   </div>
 
@@ -23,12 +60,6 @@
     @click="closeImage"
   >
     <div class="relative max-w-4xl max-h-4xl">
-      <!-- <button
-        class="absolute top-4 right-4 text-white text-xl"
-        @click="closeImage"
-      >
-        &times;
-      </button> -->
       <img
         :src="selectedImage.src"
         :alt="selectedImage.alt"
@@ -77,11 +108,14 @@ const projectId = computed(() => route.params.projectId);
 
 const projects = [
   {
-    name: "kappes-kimchi.de",
+    name: "Kappes Kimchi",
     path: "kappes-kimchi",
     link: "https://kappes-kimchi.de/",
     description:
       "Creation of a feature-rich webshop for Kappes-Kimchi, enabling an online presentation of high-quality products.",
+    technology: "Vue, GCP, Firebase, Stripe",
+    year: "2022-2023",
+    employer: "kappes kimchi",
     images: [
       {
         src: kappesKimchiImageFirst,
@@ -107,10 +141,14 @@ const projects = [
     ],
   },
   {
-    name: "schwarmplaner.zugvoegelfestival.org",
+    name: "Schwarmplaner",
     path: "schwarmplaner-zugvoegel",
     link: "https://schwarmplaner.zugvoegelfestival.org/",
-    description: "lorem",
+    description:
+      "Participation in the implementation of the staff planning tool 'Schwarmplaner' for the migratory bird festival. The main function of the tool is the efficient assignment of staff shifts.",
+    technology: "Vue, Express",
+    year: "2022-2023",
+    employer: "Zugvögel e.V.",
     images: [
       {
         src: schwarmplanerImageFirst,
@@ -136,10 +174,14 @@ const projects = [
     ],
   },
   {
-    name: "meine.swm.de",
+    name: "MeineSWM",
     path: "meine-swm",
     link: "https://meine.swm.de/",
-    description: "lorem",
+    description:
+      "Further development of the customer portal of Stadtwerke München, which allows customers to access account data, invoices, contracts and meter readings. My task was to implement an interactive interface, to visualize corresponding customer data and to implement a variety of other portal-specific functions.",
+    technology: "Angular",
+    year: "2022-2023",
+    employer: "denkwerk",
     images: [
       {
         src: meineSwmImageFirst,
@@ -156,10 +198,14 @@ const projects = [
     ],
   },
   {
-    name: "swm.de",
+    name: "Stadtwerke München",
     path: "swm",
     link: "https://www.swm.de/",
-    description: "lorem",
+    description:
+      "Co-development and implementation of swm.de, which contains a variety of individualized components and reusable patterns.",
+    technology: "Vue, Nunjucks",
+    year: "2021-2023",
+    employer: "denkwerk",
     images: [
       {
         src: swmImageFirst,
@@ -180,10 +226,14 @@ const projects = [
     ],
   },
   {
-    name: "mundzumund.org",
+    name: "MundzuMund-Festival 2022",
     path: "mundzumund-festival",
     link: "https://mundzumund.org/",
-    description: "lorem",
+    description:
+      "Creation of a website for the presentation of the mundzumund festival 2022 including the implementation of Paypal and Klarna as payment services, e-mail services and login area using an express backend.",
+    technology: "Vue, Express, Klarna, PayPal",
+    year: "2021-2022",
+    employer: "rosarot e.V.",
     images: [
       {
         src: mzmFirst,
@@ -204,10 +254,14 @@ const projects = [
     ],
   },
   {
-    name: "deka.de",
+    name: "Deka Investments",
     path: "deka",
     link: "https://www.deka.de/",
-    description: "lorem",
+    description:
+      "Implementation of the deka.de website for the credit institution Deka Investments, which essentially consists of an interplay of reusable and individualized components and creates an appealing user interface.",
+    technology: "Vue, Nunjucks",
+    year: "2020-2021",
+    employer: "denkwerk",
     images: [
       {
         src: dekaFirst,
