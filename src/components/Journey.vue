@@ -1,6 +1,6 @@
 <template>
-  <section class="relative z-10 flex flex-col-reverse items-center">
-    <h3 class="font-rubik text-3xl md:text-7xl mb-9">My Experience</h3>
+  <section class="scroll-hidden relative z-10 flex flex-col-reverse items-center">
+    <h3 class="font-rubik text-4xl md:text-7xl mb-9">My Experience</h3>
     <div
       class="w-20 h-14 bg-[#2c3e50] text-white cursor-pointer font-rubik flex items-center justify-center mb-8"
     >

@@ -1,7 +1,7 @@
 <template>
-  <section class="relative z-10">
+  <section class="scroll-hidden relative z-10">
     <h3 class="font-rubik text-4xl md:text-7xl mb-9 mx-auto">My Experience</h3>
-    <p class="p-1 text-xl">
+    <p class="p-1 md:text-xl">
       Relevant projects I was allowed to participate in
     </p>
     <div class="flex flex-wrap items-center gap-10 py-[36px]">

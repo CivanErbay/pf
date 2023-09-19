@@ -1,8 +1,8 @@
 <template>
   <div>
-    <section class="flex">
+    <section class="scroll-hidden flex">
       <div class="w-full sm:w-1/2 md:w-[600px]">
-        <h3 class="font-rubik text-3xl md:text-7xl mb-9">Contact</h3>
+        <h3 class="font-rubik text-4xl md:text-7xl mb-9">Contact</h3>
 
         <form
           action="https://formsubmit.co/d330320b176d4ace6fe30656c0275f61"

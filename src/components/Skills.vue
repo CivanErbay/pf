@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col">
+  <section class="scroll-hidden flex flex-col">
     <h3 class="font-rubik text-4xl md:text-7xl mb-9">My Expertise</h3>
 
     <div class="flex flex-wrap md:gap-10">
@@ -22,11 +22,11 @@
           </div>
           <p class="p-1">
             A professional web developer with several years of experience in a
-            renowned agency
+            renowned agency.
           </p>
           <p class="p-1">
             Confident in handling complex project requirements, design and style
-            guides
+            guides.
           </p>
         </div>
 
@@ -49,11 +49,11 @@
           <p class="p-1">
             Reliable implementation of websites, complex web applications and
             digital solutions that are both functional and aesthetically
-            pleasing
+            pleasing.
           </p>
           <p class="p-1">
             Customer-focused & agile approach, and a good understanding of how
-            to translate their needs into effective digital solutions
+            to translate their needs into effective digital solutions.
           </p>
         </div>
       </div>
@@ -85,13 +85,13 @@
           </p>
         </div>
 
-        <div class="md:h-60">
+        <!-- <div class="md:h-60">
           <div class="flex items-center mb-6 mt-9">
             <img alt="" class="h-10" src="../assets/cup-svgrepo-com.svg" />
             <h5 class="font-bold text-xl font-rubik ml-3">WhatElse?</h5>
           </div>
           <p class="p-1">I'm fun to work with!</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

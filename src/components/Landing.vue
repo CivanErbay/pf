@@ -1,6 +1,6 @@
 <template>
-  <section class="flex flex-col md:justify-center relative">
-    <div class="mt-32 md:mt-0">
+  <section class="flex flex-col visible md:justify-center relative">
+    <div class=" md:mt-0">
       <h1 class="font-rubik text-5xl md:text-9xl">
         Crafting Digital Landscapes.
       </h1>

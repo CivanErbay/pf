@@ -1,12 +1,11 @@
 <template>
   <div>
+    <SvgScroll class="rotate-180"></SvgScroll>
     <Landing></Landing>
-    <!-- <SvgScroll></SvgScroll> -->
     <Skills></Skills>
     <Projects></Projects>
     <Contact></Contact>
     <Footer></Footer>
-    
   </div>
 </template>
 

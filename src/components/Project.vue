@@ -13,7 +13,9 @@
 
     <div class="mt-8 md:mt-0 md:ml-8 md:w-1/3 flex flex-col justify-between">
       <h2 class="text-2xl font-semibold font-rubik">{{ currProject.name }}</h2>
-      <p class="text-gray-600 mt-2">{{ currProject.description }}</p>
+      <p class="text-gray-600 mt-2 text-justify">
+        {{ currProject.description }}
+      </p>
 
       <div class="flex flex-col md:flex-row gap-8 my-9">
         <div class="text-gray-600 pt-2 border-t">
@@ -36,6 +38,9 @@
         </div>
       </div>
       <div class="flex justify-between">
+        <router-link to="/" class="hover:-ml-3 transition-all duration-300">
+          <img alt="back button" class="h-[40px]" src="../assets/back.svg"
+        /></router-link>
         <a
           target="_blank"
           :href="currProject.link"
@@ -47,9 +52,6 @@
             class="absolute bg-blue-100 h-0 bottom-1 group-hover/link:h-7 -z-10 transition-all w-full duration-300"
           ></div>
         </a>
-        <router-link to="/" class="hover:mr-3">
-          <img alt="back button" class="h-[40px]" src="../assets/back.svg"
-        /></router-link>
       </div>
     </div>
   </div>
