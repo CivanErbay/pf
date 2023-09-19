@@ -5,6 +5,8 @@
     <Skills></Skills>
     <Projects></Projects>
     <Contact></Contact>
+    <Footer></Footer>
+    
   </div>
 </template>
 
@@ -15,6 +17,7 @@ import Journey from "../components/Journey.vue";
 import Projects from "./../components/Projects.vue";
 import Skills from "./../components/Skills.vue";
 import Contact from "./../components/Contact.vue";
+import Footer from "./../components/Footer.vue";
 </script>
 
 <style scoped></style>

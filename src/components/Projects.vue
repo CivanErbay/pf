@@ -1,6 +1,9 @@
 <template>
   <section class="relative z-10">
     <h3 class="font-rubik text-4xl md:text-7xl mb-9 mx-auto">My Experience</h3>
+    <p class="p-1 text-xl">
+      Relevant projects I was allowed to participate in
+    </p>
     <div class="flex flex-wrap items-center gap-10 py-[36px]">
       <div
         v-for="project in projects"
@@ -42,42 +45,42 @@ const projects = [
     name: "kappes-kimchi.de",
     path: "kappes-kimchi",
     link: "https://kappes-kimchi.de/",
-    imgPath: "src/assets/project-img/kappes/kappes-5.png",
+    imgPath: "./projectImgs/kappes-5.png",
     year: "2022-2023",
   },
   {
     name: "schwarmplaner.zugvoegelfestival.org",
     path: "schwarmplaner-zugvoegel",
     link: "https://schwarmplaner.zugvoegelfestival.org/",
-    imgPath: "src/assets/project-img/schwarmplaner/schwarm-1.png",
+    imgPath: "./projectImgs/schwarm-1.png",
     year: "2022-2023",
   },
   {
     name: "meine.swm.de",
     path: "meine-swm",
     link: "https://meine.swm.de/",
-    imgPath: "src/assets/project-img/mswm/mswm-1.png",
+    imgPath: "./projectImgs/mswm-1.png",
     year: "2022-2023",
   },
   {
     name: "swm.de",
     path: "swm",
     link: "https://www.swm.de/",
-    imgPath: "src/assets/project-img/swm/swm-1.png",
+    imgPath: "./projectImgs/swm-1.png",
     year: "2021-2023",
   },
   {
     name: "mundzumund.org",
     path: "mundzumund-festival",
     link: "https://mundzumund.org/",
-    imgPath: "src/assets/project-img/mzm/mzm-1.png",
+    imgPath: "./projectImgs/mzm-1.png",
     year: "2021-2022",
   },
   {
     name: "deka.de",
     path: "deka",
     link: "https://www.deka.de/",
-    imgPath: "src/assets/project-img/deka/deka-1.png",
+    imgPath: "./projectImgs/deka-1.png",
     year: "2020-2021",
   },
 ];

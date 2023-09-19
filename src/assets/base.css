@@ -79,13 +79,6 @@ p {
 }
 
 section {
-  min-height: 90dvh;
-  margin-top: 50px;
+  padding: 12rem 0;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}

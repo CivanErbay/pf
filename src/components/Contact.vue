@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="flex mt-24">
+    <section class="flex">
       <div class="w-full sm:w-1/2 md:w-[600px]">
         <h3 class="font-rubik text-3xl md:text-7xl mb-9">Contact</h3>
 
@@ -48,17 +48,16 @@
             :disabled="isSubmitting"
           >
             <div class="flex" v-if="isSubmitting">
-              <div class="flex" v-if="isSubmitting">
-                <div class="relative overflow-visible">
-                  <div
-                    class="w-12 h-12 rounded-full absolute border-4 border-solid border-gray-200"
-                  ></div>
+              <div class="relative overflow-visible">
+                <div
+                  class="w-12 h-12 rounded-full absolute border-4 border-solid border-gray-200"
+                ></div>
 
-                  <div
-                    class="w-12 h-12 rounded-full animate-spin absolute border-4 border-solid border-gray-500 border-t-transparent"
-                  ></div>
-                </div>
+                <div
+                  class="w-12 h-12 rounded-full animate-spin absolute border-4 border-solid border-gray-500 border-t-transparent"
+                ></div>
               </div>
+              <p class="ml-16 mt-3">This might take a while ...</p>
             </div>
             <span
               class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-gray-900"

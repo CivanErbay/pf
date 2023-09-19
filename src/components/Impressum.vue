@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted } from "vue";
-/* import { useRouter } from "vue-router";
-const router = useRouter(); */
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 onMounted(() => {
-  // window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 const toLanding = () => {
@@ -14,13 +14,13 @@ const toLanding = () => {
 
 <template>
   <div class="impressum">
-    <h4>Impressum</h4>
+    <h4 class="font-rubik">Impressum</h4>
     <p>Angaben gemäß § 5 TMG</p>
     <p>Civan Erbay</p>
     <p>Körnerstr. 116</p>
     <p>50823 Köln</p>
     <h2>Kontakt</h2>
-    <p>E-Mail: info@civan.io</p>
+    <p>E-Mail: info@civan-erbay.de</p>
     <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
     <p>KimchiCode - Einzelunternehmen</p>
     <h2>EU-Streitschlichtung</h2>
@@ -82,39 +82,39 @@ const toLanding = () => {
   </div>
 </template>
 
-<style lang="scss">
+<style scoped>
 .impressum {
   display: flex;
   flex-direction: column;
   margin: 50px 0 10px;
   width: 75%;
   overflow: scroll;
+}
 
-  h4 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0;
+.impressum-back {
+  border: 2px solid white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 50px;
+}
 
-    &:first-child {
-      font-size: 28px;
-    }
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+
+  &:first-child {
+    font-size: 28px;
   }
+}
 
-  h2 {
-    margin-top: 20px;
-  }
+h2 {
+  margin-top: 20px;
+}
 
-  p {
-    font-size: 12px;
-  }
-
-  &-back {
-    border: 2px solid white;
-    padding: 5px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: fit-content;
-    margin-top: 50px;
-  }
+p {
+  font-size: 12px;
 }
 </style>
