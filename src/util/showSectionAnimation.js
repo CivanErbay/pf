@@ -1,4 +1,3 @@
-// showSectionAnimation.js
 export function checkScroll() {
   const sections = document.querySelectorAll(".scroll-hidden");
 
@@ -6,7 +5,7 @@ export function checkScroll() {
     const sectionTop = section.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    if (sectionTop < windowHeight * 0.45) {
+    if (sectionTop < windowHeight * 0.6) {
       section.classList.add("visible");
     }
   });

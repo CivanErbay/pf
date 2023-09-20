@@ -2,11 +2,11 @@
   <div>
     <SvgScroll class="rotate-180"></SvgScroll>
     <div class="relative">
-      <Landing></Landing>
-      <Skills></Skills>
-      <Projects></Projects>
-      <Contact></Contact>
-      <Footer></Footer>
+      <Landing id="landing"></Landing>
+      <Skills id="skills"></Skills>
+      <Projects id="projects"></Projects>
+      <Contact id="landing"></Contact>
+      <Footer id="projects"></Footer>
     </div>
   </div>
 </template>

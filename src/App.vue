@@ -1,6 +1,7 @@
 <script setup>
 import { checkScroll } from "./util/showSectionAnimation.js";
-import { onMounted, onBeforeUnmount } from "vue";
+import { transitionIn, transitionOut } from "./util/transitionAnimation.js";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 
 onMounted(() => {
   window.addEventListener("scroll", checkScroll);
@@ -17,9 +18,15 @@ onBeforeUnmount(() => {
 <template>
   <main>
     <router-view v-slot="{ Component }">
-      <Transition name="page-slide">
-        <component :is="Component"></component>
-      </Transition>
+      <keep-alive>
+        <Transition
+          name="page-slide"
+          @before-leave="transitionOut"
+          @enter="transitionIn"
+        >
+          <component :is="Component"></component>
+        </Transition>
+      </keep-alive>
     </router-view>
   </main>
 </template>
