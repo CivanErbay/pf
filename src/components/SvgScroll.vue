@@ -69,7 +69,7 @@ export default {
 }
 
 svg path {
-  transition: stroke-dashoffset 0.3s;
+  transition: stroke-dashoffset 0.2s;
 }
 
 .me {

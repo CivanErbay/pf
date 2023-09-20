@@ -1,13 +1,11 @@
 <script setup>
 import { checkScroll } from "./util/showSectionAnimation.js";
-
-// Call checkScroll on scroll and resize events
 import { onMounted, onBeforeUnmount } from "vue";
 
 onMounted(() => {
   window.addEventListener("scroll", checkScroll);
   window.addEventListener("resize", checkScroll);
-  checkScroll(); // Check on initial load
+  checkScroll();
 });
 
 onBeforeUnmount(() => {
@@ -17,7 +15,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="relative">
+  <main>
     <router-view v-slot="{ Component }">
       <Transition name="page-slide">
         <component :is="Component"></component>
