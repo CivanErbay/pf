@@ -42,7 +42,7 @@
               />
 
               <h5 class="font-bold text-xl font-rubik ml-3 relative text-white">
-                WhatCanIDo?
+                HowCanIHelp?
               </h5>
             </span>
           </div>

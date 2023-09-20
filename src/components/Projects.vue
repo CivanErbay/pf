@@ -14,7 +14,7 @@
         >
           <img
             alt=""
-            class="h-[300px] w-[450px] object-cover z-10 transition-transform duration-300 hover:scale-105"
+            class="h-[300px] w-[450px] object-cover transition-transform duration-300 hover:scale-105"
             :src="project.imgPath"
           />
         </router-link>
@@ -22,17 +22,21 @@
           :href="project.link"
           target="_blank"
           :alt="`${project.name} website link`"
-          class="absolute bg-white text-base font-bold bottom-10 left-0 px-4 py-2 z-10 group-hover:bg-white group/link"
+          class="absolute text-[1.1rem] font-bold bottom-10 left-0 px-5 py-9 pl-8 z-20 group/link flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-white"
         >
-          {{ project.name }}
+          <span class="z-20 group-hover/link:text-white duration-700">{{
+            project.name
+          }}</span>
           <div
-            class="absolute bg-blue-100 h-0 bottom-1 group-hover/link:h-7 -z-10 transition-all inset-x-4"
+            :style="{ backgroundColor: randomColor() }"
+            style="transform: skewY(-3deg)"
+            :class="`absolute w-2 h-16 bottom-4 group-hover/link:w-full z-10 transition-all inset-x-4 flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 duration-500`"
           ></div>
         </a>
         <p
-          class="absolute bottom-0 md:-bottom-12 py-3 px-4 bg-white text-base font-bold group-hover:bottom-0 transition-bottom duration-300"
+          class="absolute bottom-0 md:-left-28 py-2 px-4 text-base font-bold group-hover:left-0 transition-bottom duration-500 flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-white"
         >
-          {{ project.year }}
+          <span class="z-10">{{ project.year }}</span>
         </p>
       </div>
     </div>
@@ -84,4 +88,11 @@ const projects = [
     year: "2020-2021",
   },
 ];
+
+
+const randomColor = () => {
+  const colors = ["#FF6B2B", "#2C49D8", "#ec4899"];
+  const rndInt = Math.floor(Math.random() * colors.length);
+  return colors[rndInt];
+};
 </script>

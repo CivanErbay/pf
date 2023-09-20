@@ -5,8 +5,8 @@
       <Landing id="landing"></Landing>
       <Skills id="skills"></Skills>
       <Projects id="projects"></Projects>
-      <Contact id="landing"></Contact>
-      <Footer id="projects"></Footer>
+      <Contact id="contact"></Contact>
+      <Footer id="footer"></Footer>
     </div>
   </div>
 </template>

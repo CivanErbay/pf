@@ -23,7 +23,7 @@
           <img class="h-6" src="../assets/instagram.svg" alt="instagram link" />
         </a>
       </div>
-      <img class="h-[8rem] right-[61px] -bottom-[18px] md:h-36 absolute md:right-[10%]" src="../assets/pixel_me.png" alt="linkedin link" />
+      <img class="h-[8rem] right-[61px] -bottom-[20px] md:h-36 absolute md:right-[10%]" src="../assets/pixel_me.png" alt="linkedin link" />
     </div>
   </footer>
 </template>
