@@ -38,7 +38,10 @@
         </div>
       </div>
       <div class="flex justify-between">
-        <router-link to="/" class="hover:-ml-1 transition-all duration-300">
+        <router-link
+          to="/#projects"
+          class="hover:-ml-1 transition-all duration-300"
+        >
           <img alt="back button" class="h-[40px]" src="../assets/back.svg"
         /></router-link>
         <a

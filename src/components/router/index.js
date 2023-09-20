@@ -22,13 +22,17 @@ const router = createRouter({
       component: Impressum,
     },
   ],
-  async scrollBehavior(to, from) {
-    if (to.name === "index" && isContentPage(from)) {
-      await pageTransition();
-      return { el: "#projects" };
+  scrollBehavior(to, from, SavedPosition) {
+    if (to.hash) {
+      const el = window.location.href.split("#")[1];
+      if (el.length) {
+        document.getElementById(el).scrollIntoView({ behavior: "smooth" });
+      }
+    } else if (SavedPosition) {
+      return SavedPosition;
+    } else {
+      document.getElementById("app").scrollIntoView({ behavior: "smooth" });
     }
-
-    return undefined;
   },
 });
 
