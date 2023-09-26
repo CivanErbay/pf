@@ -104,10 +104,6 @@ h4 {
   font-size: 20px;
   font-weight: bold;
   margin: 15px 0;
-
-  &:first-child {
-    font-size: 28px;
-  }
 }
 
 h2 {

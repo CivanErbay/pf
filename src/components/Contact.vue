@@ -5,10 +5,7 @@
         <h3 class="font-rubik text-4xl md:text-7xl mb-9">Contact</h3>
 
         <form
-          action="https://formsubmit.co/d330320b176d4ace6fe30656c0275f61"
-          method="POST"
           ref="contactForm"
-          @submit.prevent="handleFormSubmit"
           v-if="!hasBeenSubmitted"
         >
           <div class="mb-4">
@@ -41,41 +38,10 @@
               v-model="formData.message"
             ></textarea>
           </div>
+
           <button
-            type="button"
-            class="relative inline-flex items-center justify-start px-5 py-3 font-bold group w-fit overflow-hidden"
-            @click="validateAndSubmit"
-            :disabled="isSubmitting"
-          >
-            <div class="flex" v-if="isSubmitting">
-              <div class="relative overflow-visible bottom-2">
-                <div
-                  class="w-12 h-12 rounded-full absolute border-4 border-solid border-gray-200"
-                ></div>
-
-                <div
-                  class="w-12 h-12 rounded-full animate-spin absolute border-4 border-solid border-gray-500 border-t-transparent"
-                ></div>
-              </div>
-              <p class="ml-16 pb-2 mt-1">This might take a while ...</p>
-            </div>
-            <span
-              :class="{ hidden: isSubmitting }"
-              class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-sky-200 opacity-100 group-hover:-translate-x-8"
-            ></span>
-            <span
-              class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-gray-900"
-              :class="{ hidden: isSubmitting }"
-              >SEND MESSAGE</span
-            >
-            <span
-              class="absolute inset-0 border-2 border-sky-200"
-              :class="{ hidden: isSubmitting }"
-            ></span>
-          </button>
-
-          <!--     <button
             type="submit"
+            @click="submitContact"
             class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
           >
             <span
@@ -85,14 +51,15 @@
               class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-sky-200 opacity-100 group-hover:-translate-x-8"
             ></span>
             <span
-              class="relative w-full text-left text-sky-200 transition-colors duration-200 ease-in-out group-hover:text-gray-900"
-              >Absenden</span
+              class="relative w-full text-left text-gray-600 transition-colors duration-200 ease-in-out group-hover:text-gray-900"
+              >SEND MSG</span
             >
             <span
               class="absolute inset-0 border-2 border-sky-200 rounded-md"
             ></span>
-          </button> -->
+          </button>
           <input type="hidden" name="_captcha" value="false" />
+
           <input
             type="hidden"
             name="_next"
@@ -113,6 +80,7 @@
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 export default {
   setup() {
@@ -144,23 +112,18 @@ export default {
     const handleFormSubmit = async () => {
       isSubmitting.value = true;
       try {
-        // Send the POST request using the Fetch API or another method.
-        // Replace this with your actual POST request code.
-        const response = await fetch(
-          "https://formsubmit.co/d330320b176d4ace6fe30656c0275f61",
-          {
-            method: "POST",
-            body: new FormData(contactForm.value),
-          }
-        );
-
-        /*      if (response.ok) { */
-        // Success! Handle the successful response or redirection here.
-
-        /*    } else {
-          // Handle errors here.
-          console.error("Error submitting the form:", response.statusText); */
-        /*   } */
+        axios
+          .post("https://pf-express.vercel.app/sendmail", {
+            sender: formData.name,
+            email: formData.email,
+            text: formData.message,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       } catch (error) {
         console.error("Error submitting the form:", error);
       } finally {
