@@ -4,10 +4,7 @@
       <div class="w-full sm:w-1/2 md:w-[600px]">
         <h3 class="font-rubik text-4xl md:text-7xl mb-9">Contact</h3>
 
-        <form
-          ref="contactForm"
-          v-if="!hasBeenSubmitted"
-        >
+        <form ref="contactForm" v-if="!hasBeenSubmitted">
           <div class="mb-4">
             <label for="name" class="block font-bold mb-2">Name:</label>
             <input
@@ -40,8 +37,7 @@
           </div>
 
           <button
-            type="submit"
-            @click="submitContact"
+            @click.prevent="validateAndSubmit"
             class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
           >
             <span
@@ -58,13 +54,7 @@
               class="absolute inset-0 border-2 border-sky-200 rounded-md"
             ></span>
           </button>
-          <input type="hidden" name="_captcha" value="false" />
-
-          <input
-            type="hidden"
-            name="_next"
-            value="https://www.civan-erbay.de/mailsuccess"
-          />
+        
         </form>
         <img
           v-show="hasBeenSubmitted"
@@ -111,27 +101,19 @@ export default {
 
     const handleFormSubmit = async () => {
       isSubmitting.value = true;
-      try {
-        axios
-          .post("https://pf-express.vercel.app/sendmail", {
-            sender: formData.name,
-            email: formData.email,
-            text: formData.message,
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      } catch (error) {
-        console.error("Error submitting the form:", error);
-      } finally {
-        /* router.push("/mailsuccess"); */
-        const routeData = router.resolve({ name: "mailsuccess" });
-        window.open(routeData.href, "_blank");
-        isSubmitting.value = false;
-      }
+
+      axios
+        .post("https://pf-express.vercel.app/sendmail", {
+          sender: formData.value.name,
+          email: formData.value.email,
+          text: formData.value.message,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     };
 
     return {
