@@ -38,7 +38,7 @@
 
           <button
             @click.prevent="validateAndSubmit"
-            class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
+            class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
           >
             <span
               class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-sky-200 opacity-[3%]"
@@ -54,7 +54,6 @@
               class="absolute inset-0 border-2 border-sky-200 rounded-md"
             ></span>
           </button>
-        
         </form>
         <img
           v-show="hasBeenSubmitted"
@@ -69,7 +68,6 @@
 
 <script>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 import axios from "axios";
 
 export default {
@@ -77,7 +75,6 @@ export default {
     const isSubmitting = ref(false);
     const hasBeenSubmitted = ref(false);
     const contactForm = ref(null);
-    const router = useRouter();
     const formData = ref({
       name: "",
       email: "",
@@ -109,7 +106,7 @@ export default {
           text: formData.value.message,
         })
         .then(function (response) {
-          console.log(response);
+          if (response.data.message == "success") hasBeenSubmitted.value = true;
         })
         .catch(function (error) {
           console.log(error);
