@@ -38,6 +38,7 @@
 
           <button
             @click.prevent="validateAndSubmit"
+            v-if="!isSubmitting"
             class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
           >
             <span
@@ -54,11 +55,12 @@
               class="absolute inset-0 border-2 border-sky-200 rounded-md"
             ></span>
           </button>
+          <div v-else><p>Please wait...</p></div>
         </form>
         <img
           v-show="hasBeenSubmitted"
           alt="back button"
-          class="h-[440px]"
+          class="h-[140px]"
           src="../assets/checkmark.svg"
         />
       </div>
