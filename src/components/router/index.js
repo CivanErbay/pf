@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Project from "./../Project.vue";
-import MailSuccess from "./../MailSuccess.vue";
 import Impressum from "./../Impressum.vue";
 import { pageTransition } from "../../util/transitionAnimation";
 

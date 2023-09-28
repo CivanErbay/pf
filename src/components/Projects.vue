@@ -14,7 +14,7 @@
         >
           <img
             alt=""
-            class="h-[300px] w-[450px] object-cover transition-transform duration-300 hover:scale-105"
+            class="h-[300px] w-[450px] object-cover transition-all duration-300 hover:scale-105 grayscale hover:grayscale-0"
             :src="project.imgPath"
           />
         </router-link>
@@ -88,7 +88,6 @@ const projects = [
     year: "2020-2021",
   },
 ];
-
 
 const randomColor = () => {
   const colors = ["#FF6B2B", "#2C49D8", "#ec4899"];

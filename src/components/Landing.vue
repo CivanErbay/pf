@@ -1,27 +1,27 @@
 <template>
-  <section class="flex flex-col visible md:justify-center relative">
-    <div class=" md:mt-0">
-      <h1 class="font-rubik text-5xl md:text-9xl">
-        Crafting Digital Landscapes.
-      </h1>
-      <h2 class="text-md md:text-2xl mt-3 md:mt-8">
-        I'm Civan, a freelance web developer with
-      </h2>
-      <h2 class="text-md md:text-2xl mt-3 md:mt-2">
-        passion for pixels & reliability in code
-      </h2>
-      <!--   <img
+  <section class="flex flex-col visible md:justify-center relative md:py-56">
+    <h1 class="font-rubik text-5xl md:text-9xl">
+      Crafting Digital Landscapes.
+    </h1>
+    <h2 class="text-md md:text-2xl mt-3 md:mt-8">
+      I'm Civan, a freelance web developer with
+    </h2>
+    <h2 class="text-md md:text-2xl mt-3 md:mt-2">
+      passion for pixels & reliability in code
+    </h2>
+    <!--   <img
         class="h-[250px] w-[400px] -mt-16 -ml-4 object-contain opacity-10"
         src="../assets/code-screen.png"
         alt=""
       /> -->
-      <!--    <img
+    <!--    <img
         class="h-[250px] w-[400px] opacity-10 absolute right-10 top-[50%]"
         src="../assets/codevec.svg"
         alt=""
       /> -->
-      <SvgCode class="opacity-10 absolute md:right-12 top-[50%] md:top-[45%]"></SvgCode>
-    </div>
+    <SvgCode
+      class="opacity-10 absolute md:right-12 top-[50%] md:top-[45%]"
+    ></SvgCode>
   </section>
 </template>
 

@@ -38,7 +38,7 @@ header {
 
 .page-slide-enter-active,
 .page-slide-leave-active {
-  transition: 600ms ease all;
+  transition: 300ms ease-out all;
 }
 
 .page-slide-enter-from,
