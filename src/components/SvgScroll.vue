@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import Journey from "./Journey.vue";
-
 export default {
   data() {
     return {
@@ -24,7 +22,6 @@ export default {
       timeoutBool: true,
     };
   },
-  components: { Journey },
   methods: {
     fillingSVGPaths() {
       let scrollPercentage =
