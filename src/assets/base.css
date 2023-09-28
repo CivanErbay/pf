@@ -1,4 +1,8 @@
-/* color palette from <https://github.com/vuejs/theme> */
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("../public/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf");
+}
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -64,9 +68,9 @@ body {
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   color: rgb(44, 62, 80);
-  /* font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
+    sans-serif;
   font-family: "Roboto Mono", "monospace";
   font-size: 15px;
   text-rendering: optimizeLegibility;

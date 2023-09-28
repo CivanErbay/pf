@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "rubik";
+  src: url("../public/fonts/Rubik/static/Rubik-Bold.ttf");
+}
+
+@font-face {
+  font-family: "roboto-mono";
+  src: url("../public/fonts/Roboto_Mono/static/RobotoMono-SemiBold.ttf");
+}

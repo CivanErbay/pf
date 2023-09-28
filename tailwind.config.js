@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         rubik: ['"rubik"', "sans-serif"],
-        "roboto-mono": ['"roboto-mono"', "monospace"],
+        "roboto": ['"roboto-mono"', "monospace"],
       },
     },
   },
