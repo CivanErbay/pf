@@ -32,7 +32,6 @@ header {
 .page-slide-enter-from,
 .page-slide-leave-to {
   transform: translateX(60px);
-  opacity: 0;
 }
 
 @media (min-width: 1024px) {
