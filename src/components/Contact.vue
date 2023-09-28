@@ -1,11 +1,29 @@
 <template>
   <div>
-    <section class="scroll-hidden flex">
+    <section class="flex min-h-full">
       <div class="w-full sm:w-1/2 md:w-[600px]">
-        <h3 class="font-rubik text-4xl md:text-7xl mb-9">Contact</h3>
+        <h3
+          v-scroll-reveal="{
+            delay: 400,
+            distance: '30px',
+            duration: 1000,
+            origin: 'top',
+          }"
+          class="font-rubik text-4xl md:text-7xl mb-9"
+        >
+          Contact
+        </h3>
 
         <form ref="contactForm" v-if="!hasBeenSubmitted">
-          <div class="mb-4">
+          <div
+            v-scroll-reveal="{
+              delay: 100,
+              distance: '30px',
+              duration: 1000,
+              origin: 'top',
+            }"
+            class="mb-4"
+          >
             <label for="name" class="block font-bold mb-2">Name:</label>
             <input
               type="text"
@@ -15,7 +33,15 @@
               v-model="formData.name"
             />
           </div>
-          <div class="mb-4">
+          <div
+            v-scroll-reveal="{
+              delay: 400,
+              distance: '30px',
+              duration: 1000,
+              origin: 'top',
+            }"
+            class="mb-4"
+          >
             <label for="email" class="block font-bold mb-2">Email:</label>
             <input
               type="email"
@@ -25,7 +51,15 @@
               v-model="formData.email"
             />
           </div>
-          <div class="mb-4">
+          <div
+            v-scroll-reveal="{
+              delay: 600,
+              distance: '30px',
+              duration: 1000,
+              origin: 'top',
+            }"
+            class="mb-4"
+          >
             <label for="message" class="block font-bold mb-2">Message:</label>
             <textarea
               name="message"
@@ -37,6 +71,12 @@
           </div>
 
           <button
+            v-scroll-reveal="{
+              delay: 1000,
+              distance: '30px',
+              duration: 1000,
+              origin: 'top',
+            }"
             @click.prevent="validateAndSubmit"
             v-if="!isSubmitting"
             class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-md group w-fit"
@@ -57,71 +97,61 @@
           </button>
           <div v-else><p>Please wait...</p></div>
         </form>
-        <img
-          v-show="hasBeenSubmitted"
-          alt="back button"
-          class="h-[140px]"
-          src="../assets/checkmark.svg"
-        />
+        <div v-show="hasBeenSubmitted" class="md:ml-20 h-[380px]">
+          <img
+            alt="back button"
+            class="h-[140px]"
+            src="../assets/checkmark.svg"
+          />
+        </div>
       </div>
     </section>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { vScrollReveal } from "vue-scroll-reveal";
 
-export default {
-  setup() {
-    const isSubmitting = ref(false);
-    const hasBeenSubmitted = ref(false);
-    const contactForm = ref(null);
-    const formData = ref({
-      name: "",
-      email: "",
-      message: "",
+const isSubmitting = ref(false);
+const hasBeenSubmitted = ref(false);
+const contactForm = ref(null);
+const formData = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const validateAndSubmit = () => {
+  if (validateForm()) {
+    handleFormSubmit();
+  }
+};
+
+const validateForm = () => {
+  const { name, email, message } = formData.value;
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields.");
+    return false;
+  }
+  return true;
+};
+
+const handleFormSubmit = async () => {
+  isSubmitting.value = true;
+
+  axios
+    .post("https://pf-express.vercel.app/sendmail", {
+      sender: formData.value.name,
+      email: formData.value.email,
+      text: formData.value.message,
+    })
+    .then(function (response) {
+      if (response.data.message == "success") hasBeenSubmitted.value = true;
+    })
+    .catch(function (error) {
+      console.log(error);
     });
-
-    const validateAndSubmit = () => {
-      if (validateForm()) {
-        handleFormSubmit();
-      }
-    };
-
-    const validateForm = () => {
-      const { name, email, message } = formData.value;
-      if (!name || !email || !message) {
-        alert("Please fill in all required fields.");
-        return false;
-      }
-      return true;
-    };
-
-    const handleFormSubmit = async () => {
-      isSubmitting.value = true;
-
-      axios
-        .post("https://pf-express.vercel.app/sendmail", {
-          sender: formData.value.name,
-          email: formData.value.email,
-          text: formData.value.message,
-        })
-        .then(function (response) {
-          if (response.data.message == "success") hasBeenSubmitted.value = true;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    };
-
-    return {
-      isSubmitting,
-      hasBeenSubmitted,
-      contactForm,
-      formData,
-      validateAndSubmit,
-    };
-  },
 };
 </script>

@@ -1,18 +1,6 @@
 <script setup>
-/* import { checkScroll } from "./util/showSectionAnimation.js"; */
 import { transitionIn, transitionOut } from "./util/transitionAnimation.js";
-/* import { onMounted, onBeforeUnmount, ref } from "vue"; */
 
-/* onMounted(() => {
-  window.addEventListener("scroll", checkScroll);
-  window.addEventListener("resize", checkScroll);
-  checkScroll();
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", checkScroll);
-  window.removeEventListener("resize", checkScroll);
-}); */
 </script>
 
 <template>

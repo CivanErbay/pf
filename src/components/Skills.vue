@@ -1,10 +1,27 @@
 <template>
-  <section class="scroll-hidden flex flex-col">
-    <h3 class="font-rubik text-4xl md:text-7xl mb-9">My Expertise</h3>
+  <section class="flex flex-col">
+    <h3
+      v-scroll-reveal="{
+        delay: 250,
+        distance: '150px',
+        duration: 2000,
+        origin: 'top',
+      }"
+      class="font-rubik text-4xl md:text-7xl mb-9"
+    >
+      My Expertise
+    </h3>
 
     <div class="flex flex-wrap md:gap-10">
       <div class="max-w-md">
-        <div class="md:h-60">
+        <div
+          v-scroll-reveal="{
+            delay: 250,
+            duration: 1000,
+            origin: 'left',
+          }"
+          class="md:h-60"
+        >
           <div class="flex items-center mb-6 mt-9">
             <span
               class="flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 p-2 before:bg-pink-500 relative"
@@ -30,7 +47,15 @@
           </p>
         </div>
 
-        <div class="md:h-60">
+        <div
+          v-scroll-reveal="{
+            delay: 350,
+
+            duration: 2000,
+            origin: 'right',
+          }"
+          class="md:h-60"
+        >
           <div class="flex items-center mb-6 mt-9">
             <span
               class="flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 p-2 before:bg-[#2C49D8] relative"
@@ -59,7 +84,15 @@
       </div>
 
       <div class="max-w-md">
-        <div class="md:h-60">
+        <div
+          v-scroll-reveal="{
+            delay: 450,
+
+            duration: 2000,
+            origin: 'bottom',
+          }"
+          class="md:h-60"
+        >
           <div class="flex items-center mb-6 mt-9">
             <span
               class="flex items-center before:block before:absolute before:-inset-1 before:-skew-y-3 p-2 before:bg-[#FF6B2B] relative"
@@ -97,8 +130,8 @@
   </section>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { vScrollReveal } from "vue-scroll-reveal";
 </script>
 
 <style lang="scss" scoped></style>

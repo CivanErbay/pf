@@ -1,5 +1,5 @@
 <template>
-  <footer class="scroll-hidden py-4">
+  <footer class="py-4">
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-sm flex flex-col md:flex-row">
         <router-link

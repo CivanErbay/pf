@@ -1,6 +1,6 @@
 <template>
   <div v-show="!timeoutBool" class="svg-container">
-    <svg width="103" height="3804" viewBox="0 0 103 4304">
+    <svg width="103" height="3996" viewBox="0 0 103 4304">
       <path
         d="M95.5 4303.5V3713.11V2525.5H8V0"
         fill="none"
