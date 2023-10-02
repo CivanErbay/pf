@@ -1,6 +1,9 @@
 <template>
-  <section class="flex flex-col visible md:justify-center relative md:py-56">
-    <h1
+  <section class="flex flex-col md:justify-center relative md:py-56">
+    <h1 class="font-rubik text-5xl md:text-9xl">
+      Crafting Digital Landscapes.
+    </h1>
+    <!-- <h1
       v-scroll-reveal="{
         delay: 250,
         distance: '150px',
@@ -10,7 +13,7 @@
       class="font-rubik text-5xl md:text-9xl"
     >
       Crafting Digital Landscapes.
-    </h1>
+    </h1> -->
     <h2
       v-scroll-reveal="{
         delay: 250,
