@@ -24,15 +24,7 @@
           },
           { "key": "X-XSS-Protection", "value": "1; mode=block" },
           { "key": "Referrer-Policy", "value": "no-referrer" },
-          { "key": "Feature-Policy", "value": "microphone 'self'" },
-          {
-            "key": "Expect-CT",
-            "value": "max-age=86400, report-uri='https://YOURKEY.report-uri.com/b/g/h'"
-          },
-          {
-            "key": "Report-To",
-            "value": "'group':'default', 'max_age':31536000, 'endpoints':[{'url':'https://YOURKEY.report-uri.com/b/g/h'}],'include_subdomains':true'"
-          }
+          { "key": "Feature-Policy", "value": "microphone 'self'" }
         ]
       }
     ]

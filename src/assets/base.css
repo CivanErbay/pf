@@ -91,10 +91,6 @@ section {
   min-height: 90dvh;
 }
 
-section.visible {
-  transform: translateX(0);
-}
-
 @media (min-width: 1024px) {
   section {
     padding: 8rem 0;
