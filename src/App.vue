@@ -4,17 +4,7 @@
 
 <template>
   <main>
-    <router-view v-slot="{ Component }">
-      <!--       <keep-alive>
-        <Transition
-          name="page-slide"
-          @before-leave="transitionOut"
-          @enter="transitionIn"
-        > -->
-      <component :is="Component"></component>
-      <!--        </Transition>
-      </keep-alive> -->
-    </router-view>
+    <router-view></router-view>
   </main>
 </template>
 
